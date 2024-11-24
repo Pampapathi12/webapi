@@ -1,0 +1,269 @@
+﻿3. Entity Framework
+
+===============================
+ORM -> Object relatinal mapper
+
+
+
+### What is ORM in .NET?
+
+ORM (Object-Relational Mapping) is a programming technique that helps developers interact with databases using object-oriented programming principles. It abstracts the database layer, allowing developers to perform database operations without writing raw SQL queries. In .NET, popular ORM frameworks include **Entity Framework (EF)**, **Dapper**, and others.
+
+---
+
+### Key Concepts of ORM
+
+1. **Entity Classes**:
+   - Represent database tables as classes.
+   - Each row in a table corresponds to an object of the class.
+
+2. **Mapping**:
+   - Defines how classes and their properties map to database tables and columns.
+
+3. **Context/Session**:
+   - Manages the connection to the database.
+   - Acts as a bridge between the application and the database.
+
+4. **Querying**:
+   - Allows data retrieval using LINQ (Language Integrated Query) or ORM-specific query methods.
+
+5. **Change Tracking**:
+   - Detects changes in objects and updates the database accordingly.
+
+---
+
+### Advantages of Using ORM in .NET
+
+1. **Productivity**:
+   - Reduces boilerplate code (e.g., SQL queries).
+   - Streamlines CRUD operations.
+
+2. **Maintainability**:
+   - Code is more readable and maintainable because database logic is encapsulated.
+
+3. **Type Safety**:
+   - Helps avoid SQL injection and runtime errors by using strongly typed queries.
+
+4. **Abstraction**:
+   - Abstracts database details, allowing you to focus on business logic.
+
+5. **Portability**:
+   - Easier to switch between databases (e.g., SQL Server, PostgreSQL) with minimal code changes.
+
+---
+
+### How ORM Works in .NET
+
+#### 1. **Define Models**
+   - Create classes to represent database tables.
+   ```csharp
+   public class Employee
+   {
+       public int Id { get; set; }
+       public string Name { get; set; }
+       public string Department { get; set; }
+   }
+   ```
+
+#### 2. **Mapping**
+   - Configure mappings between classes and database tables.
+   - Can be done through:
+     - **Data Annotations**:
+       ```csharp
+       [Table("Employees")]
+       public class Employee { ... }
+       ```
+     - **Fluent API**:
+       ```csharp
+       modelBuilder.Entity<Employee>().ToTable("Employees");
+       ```
+
+#### 3. **Database Context**
+   - Create a context class to manage database connections.
+   ```csharp
+   public class ApplicationDbContext : DbContext
+   {
+       public DbSet<Employee> Employees { get; set; }
+   }
+   ```
+
+#### 4. **Perform CRUD Operations**
+   - **Create**:
+     ```csharp
+     var newEmployee = new Employee { Name = "John", Department = "HR" };
+     context.Employees.Add(newEmployee);
+     context.SaveChanges();
+     ```
+
+   - **Read**:
+     ```csharp
+     var employee = context.Employees.FirstOrDefault(e => e.Id == 1);
+     ```
+
+   - **Update**:
+     ```csharp
+     var employee = context.Employees.FirstOrDefault(e => e.Id == 1);
+     employee.Department = "IT";
+     context.SaveChanges();
+     ```
+
+   - **Delete**:
+     ```csharp
+     var employee = context.Employees.FirstOrDefault(e => e.Id == 1);
+     context.Employees.Remove(employee);
+     context.SaveChanges();
+     ```
+
+---
+
+### Features of ORM in .NET
+
+#### 1. **Lazy Loading**
+   - Loads related data only when accessed.
+   - Example:
+     ```csharp
+     var employee = context.Employees.First();
+     var department = employee.Department; // Department loaded here.
+     ```
+
+#### 2. **Eager Loading**
+   - Loads related data immediately with the main entity.
+   - Example:
+     ```csharp
+     var employee = context.Employees.Include(e => e.Department).First();
+     ```
+
+#### 3. **Transactions**
+   - Manages database transactions automatically or explicitly.
+   - Example:
+     ```csharp
+     using (var transaction = context.Database.BeginTransaction())
+     {
+         try
+         {
+             // Perform operations
+             transaction.Commit();
+         }
+         catch
+         {
+             transaction.Rollback();
+         }
+     }
+     ```
+
+#### 4. **Query Translation**
+   - Translates LINQ queries into SQL.
+   - Example:
+     ```csharp
+     var employees = context.Employees.Where(e => e.Department == "IT").ToList();
+     // Translates to: SELECT * FROM Employees WHERE Department = 'IT';
+     ```
+
+#### 5. **Change Tracking**
+   - Tracks modifications to entities and generates appropriate SQL updates.
+
+---
+
+### Popular .NET ORM Frameworks
+
+1. **Entity Framework (EF) Core**:
+   - Fully-featured ORM for .NET applications.
+   - Supports LINQ, migrations, and database-first or code-first approaches.
+
+2. **Dapper**:
+   - Lightweight ORM with high performance.
+   - Requires more manual SQL handling compared to EF.
+
+3. **NHibernate**:
+   - Mature ORM with advanced features like caching and lazy loading.
+
+---
+
+### Challenges with ORM
+
+1. **Performance Overhead**:
+   - ORM frameworks can introduce overhead compared to raw SQL queries.
+
+2. **Learning Curve**:
+   - Requires understanding of ORM concepts and configurations.
+
+3. **Complex Queries**:
+   - Handling complex queries might be cumbersome compared to writing raw SQL.
+
+4. **Debugging**:
+   - Debugging auto-generated SQL can be challenging.
+
+---
+
+### Best Practices for Using ORM in .NET
+
+1. Use lazy or eager loading appropriately to optimize performance.
+2. Keep transactions short to avoid locking resources.
+3. Use logging tools to inspect generated SQL queries.
+4. For high-performance scenarios, prefer raw SQL or stored procedures for complex queries.
+
+---
+
+### Example with Entity Framework Core
+
+#### Setup
+
+1. **Install EF Core**:
+   ```bash
+   dotnet add package Microsoft.EntityFrameworkCore
+   dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+   ```
+
+2. **Configure Database Context**:
+   ```csharp
+   public class ApplicationDbContext : DbContext
+   {
+       public DbSet<Employee> Employees { get; set; }
+
+       protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+       {
+           optionsBuilder.UseSqlServer("YourConnectionString");
+       }
+   }
+   ```
+
+3. **Run Migrations**:
+   - Add migration:
+     ```bash
+     dotnet ef migrations add InitialCreate
+     ```
+   - Update database:
+     ```bash
+     dotnet ef database update
+     ```
+
+---
+
+By using ORM in .NET, you can drastically reduce the time spent on database operations while adhering to best practices in software development.
+================================================================================================================================================
+
+
+
+Using the entity framework
+==============================
+1. install the nuget packages
+Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.EntityFrameworkCore.Tools
+Microsoft.EntityFrameworkCore.Design
+ 
+ 2. creating DB Context
+    1. Create folder Data or any
+    a. applicatoinDbContext
+    3. add the dbcontext in the program.cs file for build
+
+
+    builder.Services.AddDbContext<ApplicationDBContext>(options =>{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
+
+3. Migrations
+    1.dotnet ef migrations add init
+    2.dotnet ef database update
+
+
+

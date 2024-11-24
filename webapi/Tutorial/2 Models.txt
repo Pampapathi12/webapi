@@ -1,0 +1,5 @@
+﻿Models 
+1 to many relationship
+
+
+creating the model and its validation
