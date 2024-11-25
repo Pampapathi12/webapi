@@ -266,4 +266,13 @@ Microsoft.EntityFrameworkCore.Design
     2.dotnet ef database update
 
 
+    migrations -> built the tables from the class file of cs file
+
+
+4. doing migration time select the project and select the terminal then  
+5. Done. To undo this action, use 'ef migrations remove'
+6. after the controller create add the controller in the program.cs file for the not calling the open api swagger
+7. builder.Services.AddControllers();, 
+8. app.MapControllers();s
+
 

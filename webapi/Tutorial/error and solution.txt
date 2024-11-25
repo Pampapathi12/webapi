@@ -1,0 +1,215 @@
+﻿PS D:\Practice\webapi\webapi> dotnet ef migrations add init
+Build started...
+Build succeeded.
+Unable to create a 'DbContext' of type 'ApplicationDBContext'. The exception 'The entity type 'DateTimeValue' requires a primary key to be defined. If you intended to use a keyless entity type, call 'HasNoKey' in 'OnModelCreating'. For more information on keyless entity types, see https://go.microsoft.com/fwlink/?linkid=2141943.' was thrown while attempting to create an instance. For the different patterns supported at design time, see https://go.microsoft.com/fwlink/?linkid=851728
+============================
+PS D:\Practice\webapi\webapi> dotnet ef database update
+Build started...
+Build succeeded.
+System.ArgumentException: Keyword not supported: 'intial catalog'.
+   at Microsoft.Data.Common.DbConnectionOptions.ParseInternal(Dictionary`2 parsetable, String connectionString, Boolean buildChain, Dictionary`2 synonyms, Boolean firstKey)
+   at Microsoft.Data.Common.DbConnectionOptions..ctor(String connectionString, Dictionary`2 synonyms)
+   at Microsoft.Data.SqlClient.SqlConnectionString..ctor(String connectionString)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   at Microsoft.Data.SqlClient.SqlConnection.set_ConnectionString(String value)
+   at Microsoft.Data.SqlClient.SqlConnection..ctor(String connectionString)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.CreateDbConnection()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.get_DbConnection()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerDatabaseCreator.<>c__DisplayClass18_0.<Exists>b__0(DateTime giveUp)
+   at Microsoft.EntityFrameworkCore.ExecutionStrategyExtensions.<>c__DisplayClass12_0`2.<Execute>b__0(DbContext _, TState s)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ExecutionStrategyExtensions.Execute[TState,TResult](IExecutionStrategy strategy, TState state, Func`2 operation, Func`2 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerDatabaseCreator.Exists(Boolean retryOnNotExists)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerDatabaseCreator.Exists()
+   at Microsoft.EntityFrameworkCore.Migrations.Internal.Migrator.Migrate(String targetMigration)
+   at Microsoft.EntityFrameworkCore.Design.Internal.MigrationsOperations.UpdateDatabase(String targetMigration, String connectionString, String contextType)
+   at Microsoft.EntityFrameworkCore.Design.OperationExecutor.UpdateDatabaseImpl(String targetMigration, String connectionString, String contextType)
+   at Microsoft.EntityFrameworkCore.Design.OperationExecutor.UpdateDatabase.<>c__DisplayClass0_0.<.ctor>b__0()
+   at Microsoft.EntityFrameworkCore.Design.OperationExecutor.OperationBase.Execute(Action action)
+Keyword not supported: 'intial catalog'.
+PS D:\Practice\webapi\webapi> Using the entity framework
+>>
+At line:1 char:6
++ Using the entity framework
++      ~
+Missing using directive
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingUsingStatementDirective
+
+PS D:\Practice\webapi\webapi> ==============================
+>>
+============================== : The term '==============================' is not recognized as the name of a cmdlet, function, script file, or
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ==============================
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (==============================:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS D:\Practice\webapi\webapi> 1. install the nuget packages
+>>
+At line:1 char:4
++ 1. install the nuget packages
++    ~~~~~~~
+Unexpected token 'install' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+PS D:\Practice\webapi\webapi> Microsoft.EntityFrameworkCore.SqlServer
+>>
+Microsoft.EntityFrameworkCore.SqlServer : The term 'Microsoft.EntityFrameworkCore.SqlServer' is not recognized as the name of a cmdlet, function,
+script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ Microsoft.EntityFrameworkCore.SqlServer
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Microsoft.EntityFrameworkCore.SqlServer:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS D:\Practice\webapi\webapi> Microsoft.EntityFrameworkCore.Tools
+>>
+Microsoft.EntityFrameworkCore.Tools : The term 'Microsoft.EntityFrameworkCore.Tools' is not recognized as the name of a cmdlet, function, script file,
+or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ Microsoft.EntityFrameworkCore.Tools
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Microsoft.EntityFrameworkCore.Tools:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS D:\Practice\webapi\webapi> Microsoft.EntityFrameworkCore.Design
+>>
+Microsoft.EntityFrameworkCore.Design : The term 'Microsoft.EntityFrameworkCore.Design' is not recognized as the name of a cmdlet, function, script
+file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ Microsoft.EntityFrameworkCore.Design
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Microsoft.EntityFrameworkCore.Design:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS D:\Practice\webapi\webapi>
+>>
+PS D:\Practice\webapi\webapi>  2. creating DB Context
+>>
+At line:1 char:5
++  2. creating DB Context
++     ~~~~~~~~
+Unexpected token 'creating' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+PS D:\Practice\webapi\webapi>     1. Create folder Data or any
+>>
+At line:1 char:8
++     1. Create folder Data or any
++        ~~~~~~
+Unexpected token 'Create' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+PS D:\Practice\webapi\webapi>     a. applicatoinDbContext
+>>
+a. : The term 'a.' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path
+was included, verify that the path is correct and try again.
+At line:1 char:5
++     a. applicatoinDbContext
++     ~~
+    + CategoryInfo          : ObjectNotFound: (a.:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS D:\Practice\webapi\webapi>     3. add the dbcontext in the program.cs file for build
+>>
+At line:1 char:8
++     3. add the dbcontext in the program.cs file for build
++        ~~~
+Unexpected token 'add' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+PS D:\Practice\webapi\webapi>
+>>
+PS D:\Practice\webapi\webapi>
+>>
+PS D:\Practice\webapi\webapi>     builder.Services.AddDbContext<ApplicationDBContext>(options =>{
+>>     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+>> });
+>>
+>>
+>>
+options : The term 'options' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or
+if a path was included, verify that the path is correct and try again.
+At line:1 char:57
++     builder.Services.AddDbContext<ApplicationDBContext>(options =>{
++                                                         ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (options:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS D:\Practice\webapi\webapi>
+>>
+PS D:\Practice\webapi\webapi> 3. Migrations
+>>
+At line:1 char:4
++ 3. Migrations
++    ~~~~~~~~~~
+Unexpected token 'Migrations' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+PS D:\Practice\webapi\webapi>     1.dotnet ef migrations add init
+>>
+1.dotnet : The term '1.dotnet' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name,
+or if a path was included, verify that the path is correct and try again.
+At line:1 char:5
++     1.dotnet ef migrations add init
++     ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (1.dotnet:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS D:\Practice\webapi\webapi>     2.dotnet ef database update
+>>
+2.dotnet : The term '2.dotnet' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name,
+or if a path was included, verify that the path is correct and try again.
+At line:1 char:5
++     2.dotnet ef database update
++     ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (2.dotnet:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS D:\Practice\webapi\webapi>
+>>
+PS D:\Practice\webapi\webapi>
+>>
+PS D:\Practice\webapi\webapi>     migrations -> built the tables from the class file of cs file
+>>
+migrations : The term 'migrations' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the
+name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:5
++     migrations -> built the tables from the class file of cs file
++     ~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (migrations:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS D:\Practice\webapi\webapi>
+>>
+PS D:\Practice\webapi\webapi>
+>>
+PS D:\Practice\webapi\webapi> 4. doing migration time select the project and select the terminal then
+>>
+At line:1 char:4
++ 4. doing migration time select the project and select the terminal th ...
++    ~~~~~
+Unexpected token 'doing' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+PS D:\Practice\webapi\webapi> 5. Done. To undo this action, use 'ef migrations remove'
+>>
+At line:1 char:4
++ 5. Done. To undo this action, use 'ef migrations remove'
++    ~~~~~
+Unexpected token 'Done.' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+PS D:\Practice\webapi\webapi>

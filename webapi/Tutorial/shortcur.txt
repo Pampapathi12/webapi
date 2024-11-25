@@ -1,0 +1,136 @@
+﻿dotnet --version
+install -> dotnet tool install --global dotnet-ef
+dotnet ef --version
+Done. To undo this action, use 'ef migrations remove'
+
+=============================================================
+
+Using the entity framework
+==============================
+1. install the nuget packages
+Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.EntityFrameworkCore.Tools
+Microsoft.EntityFrameworkCore.Design
+ 
+ 2. creating DB Context
+    1. Create folder Data or any
+    a. applicatoinDbContext
+    3. add the dbcontext in the program.cs file for build
+
+
+    builder.Services.AddDbContext<ApplicationDBContext>(options =>{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
+
+3. Migrations
+    1.dotnet ef migrations add init
+    2.dotnet ef database update
+
+
+    migrations -> built the tables from the class file of cs file
+
+
+4. doing migration time select the project and select the terminal then  
+5. Done. To undo this action, use 'ef migrations remove'
+
+6. 
+Using the entity framework
+==============================
+1. install the nuget packages
+Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.EntityFrameworkCore.Tools
+Microsoft.EntityFrameworkCore.Design
+ 
+ 2. creating DB Context
+    1. Create folder Data or any
+    a. applicatoinDbContext
+    3. add the dbcontext in the program.cs file for build
+
+
+    builder.Services.AddDbContext<ApplicationDBContext>(options =>{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
+
+3. Migrations
+    1.dotnet ef migrations add init
+    2.dotnet ef database update
+
+
+    migrations -> built the tables from the class file of cs file
+
+
+4. doing migration time select the project and select the terminal then  
+5. Done. To undo this action, use 'ef migrations remove'
+6. 
+Using the entity framework
+==============================
+1. install the nuget packages
+Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.EntityFrameworkCore.Tools
+Microsoft.EntityFrameworkCore.Design
+ 
+ 2. creating DB Context
+    1. Create folder Data or any
+    a. applicatoinDbContext
+    3. add the dbcontext in the program.cs file for build
+
+
+    builder.Services.AddDbContext<ApplicationDBContext>(options =>{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
+
+3. Migrations
+    1.dotnet ef migrations add init
+    2.dotnet ef database update
+
+
+    migrations -> built the tables from the class file of cs file
+
+
+4. doing migration time select the project and select the terminal then  
+5. Done. To undo this action, use 'ef migrations remove'
+
+Using the entity framework
+==============================
+1. install the nuget packages
+Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.EntityFrameworkCore.Tools
+Microsoft.EntityFrameworkCore.Design
+ 
+ 2. creating DB Context
+    1. Create folder Data or any
+    a. applicatoinDbContext
+    3. add the dbcontext in the program.cs file for build
+
+
+    builder.Services.AddDbContext<ApplicationDBContext>(options =>{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
+
+3. Migrations
+    1.dotnet ef migrations add init
+    2.dotnet ef database update
+
+
+    migrations -> built the tables from the class file of cs file
+
+
+4. doing migration time select the project and select the terminal then  
+5. Done. To undo this action, use 'ef migrations remove'
+
+
+6. dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add package Microsoft.EntityFrameworkCore.Tools
+7. dotnet ef database update
+8. remove the migrations -> dotnet ef migrations remove
+=======================================================================
+
+
+1. migration time check the all the model correct are not
+2. use the primary key in the models
+3. connection string should be correctly type
+4. add the entity framewrok nuget packages correctly
+5. do the migration properly step by step
+6. crete the controller for the stock
+
+

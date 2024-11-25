@@ -1,0 +1,7 @@
+﻿1. here the endpoint the api
+
+http://localhost:5246/stock
+1. list vs Detail
+
+list the have minimal information
+detaile have the more information about the particular item
