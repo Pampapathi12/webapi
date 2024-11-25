@@ -1,0 +1,9 @@
+﻿5. DTOs
+6. Post (Create)
+7. Put (update)
+8. Delete
+9. Async/Await
+10. Repository Pattern + DI
+11. Comments System
+12. Comment GET + Include()
+14. 1-To-Many CREATE (Post)
